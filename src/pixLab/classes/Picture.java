@@ -87,14 +87,14 @@ public class Picture extends SimplePicture
   }
   
   /** Method to set the blue to 0 */
-  public void zeroBlue()
+  public void zeroRed()
   {
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setBlue(0);
+        pixelObj.setRed(-8000);
       }
     }
   }
@@ -177,13 +177,17 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("SMMpORL.jpg");
+    Picture flower2 = new Picture("n64.png");
+    Picture flower3 = new Picture("flower2.jpg");
+    Picture flower4 = new Picture("flower2.jpg");
+    Picture flower5= new Picture("flower2.jpg");
+    Picture flower6 = new Picture("flower2.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
     Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
+    flowerNoBlue.zeroRed();
     this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
@@ -224,10 +228,12 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("SMMpORL.jpg");
     beach.explore();
-    beach.zeroBlue();
+    beach.zeroRed();
+    beach.mirrorVertical();
     beach.explore();
+   
   }
   
 } // this } is the end of class Picture, put all new methods before this
