@@ -94,7 +94,7 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setRed(-8000);
+        pixelObj.setRed(8000);
       }
     }
   }
@@ -177,8 +177,8 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("SMMpORL.jpg");
-    Picture flower2 = new Picture("n64.png");
+    Picture flower1 = new Picture("stick.png");
+    Picture flower2 = new Picture("flower2.jpg");
     Picture flower3 = new Picture("flower2.jpg");
     Picture flower4 = new Picture("flower2.jpg");
     Picture flower5= new Picture("flower2.jpg");
@@ -228,12 +228,21 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("SMMpORL.jpg");
+    Picture beach = new Picture("stick.png");
     beach.explore();
     beach.zeroRed();
     beach.mirrorVertical();
     beach.explore();
+    beach.createCollage();
+    beach.zeroRed();
+    beach.explore();
+    
    
   }
+
+private void mirrorHorizontal() {
+	// TODO Auto-generated method stub
+	
+}
   
 } // this } is the end of class Picture, put all new methods before this
